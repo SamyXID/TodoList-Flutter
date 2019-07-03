@@ -34,12 +34,26 @@ class _ListTestState extends State<ListTest> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: _buildBody(),
-      routes: <String, WidgetBuilder>{
-        '/home': (_) => new ListTest(),
-        '/addTodo': (_) => new AddTodo(),
-      },
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("This is Title"),
+      ),
+      body: Container(
+        child: _buildBody()
+      ),
+      floatingActionButton: FloatingActionButton(
+        tooltip: 'Add Todo',
+        child: Icon(Icons.add),
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => AddTodo()));
+        },
+      ),
+
+
+      // routes: <String, WidgetBuilder>{
+      //   '/home': (_) => new ListTest(),
+      //   '/addTodo': (_) => new AddTodo(),
+      // },
     );
     // return Container(
     //   alignment: Alignment.center,

@@ -74,12 +74,10 @@ class _AddTodoState extends State<AddTodo> {
                         print("status : ${result["description"]}");
                       }
                     });
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //         builder: (context) => ListTest()));
+                    
                     print(data);
                   }
+                  Navigator.of(context).pushNamed("/home");
                 },
                 child: Text(
                   "Save Todo".toUpperCase(),
